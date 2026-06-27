@@ -6,7 +6,7 @@ The Sensor Node collects environmental and inertial data to help the robot monit
 ## Hardware Used
 *   **MCU**: Arduino Nano 33 BLE Sense (featuring a Nordic nRF52840 Cortex-M4 CPU) — [Arduino Nano 33 BLE Sense Cheat Sheet](https://docs.arduino.cc/tutorials/nano-33-ble-sense/cheat-sheet/).
     
-    <img src="../assets/img/arduinonanoble 33.png" alt="Arduino Nano 33 BLE Sense" width="300">
+    ![Arduino Nano 33 BLE Sense](../assets/img/arduinonanoble 33.png){ style="display: block; margin: 0 auto;" width="300" }
 
 *   **IMU**: LSM9DS1 (9-axis inertial measurement unit).
 *   **On-board Telemetry Sensors**: HTS221 (Temperature & Humidity), LPS22HB (Barometric Pressure), APDS9960 (Gesture, light, color).

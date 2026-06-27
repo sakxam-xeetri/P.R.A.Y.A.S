@@ -7,11 +7,11 @@ The Motor Controller Node drives the 4 Johnson 12V geared motors using two BTS79
 *   **MCU**: ESP32-WROOM-32E.
 *   **Drivers**: 2 × BTS7960 43A High-Current H-Bridge Motor Drivers — [BTS7960 Motor Driver Technical Manual](https://www.handsontec.com/dataspecs/module/BTS7960%20Motor%20Driver.pdf).
     
-    <img src="../assets/img/BTS7960.jpg" alt="BTS7960 H-Bridge Driver" width="350">
+    ![BTS7960 H-Bridge Driver](../assets/img/BTS7960.jpg){ style="display: block; margin: 0 auto;" width="350" }
 
 *   **Motors**: 4 × Johnson 12V 200RPM Geared DC Motors — [Johnson Geared DC Motor Specifications](https://robokits.co.in/motors/dc-motor/12v-johnson-motors/johnson-geared-dc-motors/johnson-motor-high-torque-dc-geared-12v-200rpm-grade-a?srsltid=AfmBOooiC_oSqyLvd_9NfLgiyI_Nmj8Ew9rqYHNrEijR93sJNe8nScjS).
     
-    <img src="../assets/img/jhonson motor.jpeg" alt="Johnson 12V DC Motor" width="300">
+    ![Johnson 12V DC Motor](../assets/img/jhonson motor.jpeg){ style="display: block; margin: 0 auto;" width="300" }
 
 *   **Wheels**: 4 × Robot Wheels (10cm Diameter, 4cm Width, rubber-tread).
 *   **Brackets**: Heavy-duty steel motor mounting brackets.

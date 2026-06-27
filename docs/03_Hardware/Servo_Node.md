@@ -7,11 +7,11 @@ The Servo Controller Node manages the angular positions and motion profiles of t
 *   **MCU**: ESP32-WROOM-32E.
 *   **PWM Driver**: PCA9685 16-Channel 12-bit I2C PWM controller — [Adafruit PCA9685 Guide & Datasheet](https://cdn-learn.adafruit.com/downloads/pdf/16-channel-pwm-servo-driver.pdf).
     
-    <img src="../assets/img/16chservodriver_lrg.jpg" alt="PCA9685 PWM Driver" width="320">
+    ![PCA9685 PWM Driver](../assets/img/16chservodriver_lrg.jpg){ style="display: block; margin: 0 auto;" width="320" }
 
 *   **Servos**: 7 × TowerPro MG995 Analog Metal Gear Servos — [TowerPro MG995 Datasheet Reference](https://www.electronicoscaldas.com/datasheet/MG995_Tower-Pro.pdf).
     
-    <img src="../assets/img/mg995-metal-gear-servo-motor-180-degree-high-torque-for-arduino-electroxbd-2.webp" alt="MG995 Metal Gear Servo" width="320">
+    ![MG995 Metal Gear Servo](../assets/img/mg995-metal-gear-servo-motor-180-degree-high-torque-for-arduino-electroxbd-2.webp){ style="display: block; margin: 0 auto;" width="320" }
 
 ## GPIO Mapping
 | GPIO | Pin Function | Target Component |

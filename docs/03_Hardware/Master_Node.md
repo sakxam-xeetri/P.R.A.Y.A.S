@@ -6,7 +6,7 @@ The Master Coordinator Node serves as the brain of PRAYAS V1. It connects to ext
 ## Hardware Used
 *   **MCU**: ESP32-WROOM-32E (mounted on ESP32-DevKitC-v4 core board) — [Official Espressif Hardware Reference](https://docs.espressif.com/projects/esp-idf/en/v5.1/esp32/hw-reference/esp32/get-started-devkitc.html).
     
-    <img src="../assets/img/esp32-devkitC-v4-pinout.png" alt="ESP32 DevKitC v4 Pinout Diagram" width="500">
+    ![ESP32 DevKitC v4 Pinout Diagram](../assets/img/esp32-devkitC-v4-pinout.png){ style="display: block; margin: 0 auto;" width="500" }
 
 *   **Antenna**: Built-in PCB trace antenna (an external u.FL antenna version is recommended if inside a metal shield).
 
