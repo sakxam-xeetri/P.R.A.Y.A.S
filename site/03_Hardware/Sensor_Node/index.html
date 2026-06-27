@@ -4534,7 +4534,7 @@
 <ul>
 <li><strong>MCU</strong>: Arduino Nano 33 BLE Sense (featuring a Nordic nRF52840 Cortex-M4 CPU).</li>
 <li><strong>IMU</strong>: LSM9DS1 (9-axis inertial measurement unit).</li>
-<li><strong>Ultrasonic Sensors</strong>: 2 × HC-SR04 sensors (front and rear).</li>
+<li><strong>On-board Telemetry Sensors</strong>: HTS221 (Temperature &amp; Humidity), LPS22HB (Barometric Pressure), APDS9960 (Gesture, light, color).</li>
 </ul>
 <h2 id="gpio-mapping">GPIO Mapping<a class="headerlink" href="#gpio-mapping" title="Permanent link">&para;</a></h2>
 <table>
@@ -4549,44 +4549,22 @@
 <tr>
 <td style="text-align: left;"><strong>I2C SCL</strong></td>
 <td style="text-align: left;">I2C Clock</td>
-<td style="text-align: left;">Internal LSM9DS1 (IMU)</td>
+<td style="text-align: left;">Internal LSM9DS1 (IMU) / Sensors</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>I2C SDA</strong></td>
 <td style="text-align: left;">I2C Data</td>
-<td style="text-align: left;">Internal LSM9DS1 (IMU)</td>
+<td style="text-align: left;">Internal LSM9DS1 (IMU) / Sensors</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>D2</strong></td>
-<td style="text-align: left;">Echo Pin</td>
-<td style="text-align: left;">Front HC-SR04 Sensor</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>D3</strong></td>
-<td style="text-align: left;">Trigger Pin</td>
-<td style="text-align: left;">Front HC-SR04 Sensor</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>D4</strong></td>
-<td style="text-align: left;">Echo Pin</td>
-<td style="text-align: left;">Rear HC-SR04 Sensor</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>D5</strong></td>
-<td style="text-align: left;">Trigger Pin</td>
-<td style="text-align: left;">Rear HC-SR04 Sensor</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Tx</strong></td>
+<td style="text-align: left;"><strong>Tx / D1</strong></td>
 <td style="text-align: left;">UART Serial Transmit</td>
 <td style="text-align: left;">Master Node GPIO 35 (or ESP-NOW)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> [ IMU / LSM9DS1 ] ──(I2C)──┐
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                             ├──&gt; [ Nano 33 BLE ] ──(UART / ESP-NOW)──&gt; [ Master Node ]
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> [ HC-SR04 Sonar ] ─(Pulse)──┘
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> [ IMU / HTS221 / APDS9960 ] ──(I2C)──&gt; [ Nano 33 BLE ] ──(UART / ESP-NOW)──&gt; [ Master Node ]
 </span></code></pre></div>
 <h2 id="failure-cases-recovery">Failure Cases &amp; Recovery<a class="headerlink" href="#failure-cases-recovery" title="Permanent link">&para;</a></h2>
 <ul>

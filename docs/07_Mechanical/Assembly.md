@@ -14,7 +14,8 @@ This document provides a step-by-step assembly guide for the PRAYAS V1 robot fra
 1.  Align the 4 Johnson motor steel brackets on the underside of the 12mm plywood base plate.
 2.  Secure the brackets using M4 screws and washers.
 3.  Mount the 4 geared motors into the brackets and tighten the set screws.
-4.  Attach the 100mm rubber wheels to the motor shafts.
+4.  Mount the customized metal flange hubs onto the motor shafts, align the 10cm diameter, 4cm width wheels, and bolt them securely to the hubs.
+5.  Attach the 3 × E18-D80NK IR proximity sensors to their mounting brackets at the front-left, front-center, and front-right edges of the plywood base plate, and adjust the detection range potentiometer on each sensor.
 
 ### Step 2: Torso Spine Installation
 1.  Center the 4-inch PVC floor flange on the top side of the plywood base plate.

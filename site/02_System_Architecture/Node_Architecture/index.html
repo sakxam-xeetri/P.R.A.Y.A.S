@@ -4595,20 +4595,20 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>AI Node</strong></td>
-<td style="text-align: left;">ESP32-S3-WROOM-1</td>
-<td style="text-align: left;">Speech pipeline, intent mapping, connection to voice frameworks.</td>
-<td style="text-align: left;">Wi-Fi (TCP/UDP), I2S Audio</td>
+<td style="text-align: left;">Seeed Studio XIAO ESP32-S3 Sense</td>
+<td style="text-align: left;">Speech pipeline, intent mapping, object detection, and visual Q&amp;A.</td>
+<td style="text-align: left;">Wi-Fi (TCP/UDP), I2S Audio, Camera</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Camera Node</strong></td>
 <td style="text-align: left;">ESP32-CAM</td>
-<td style="text-align: left;">Live video capture and HTTP JPEG stream.</td>
+<td style="text-align: left;">Dedicated live video feed stream.</td>
 <td style="text-align: left;">Wi-Fi (WebSockets / HTTP)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Sensor Node</strong></td>
 <td style="text-align: left;">Arduino Nano 33 BLE</td>
-<td style="text-align: left;">Parses IMU data, environmental sensors, and ultrasonic ranges.</td>
+<td style="text-align: left;">Parses IMU data and environmental sensors.</td>
 <td style="text-align: left;">UART / ESP-NOW, I2C, GPIO</td>
 </tr>
 <tr>
@@ -4637,7 +4637,7 @@
 <li><strong>Processor</strong>: Tensilica Xtensa Dual-Core 32-bit LX6 at 240 MHz.</li>
 <li><strong>Key Tasks</strong>:<ul>
 <li><code>vMotorDriveTask</code> (Priority 5): Calculates kinematics and updates PWM frequencies (20 kHz) to BTS7960 drivers.</li>
-<li><code>vSafetyWatchdogTask</code> (Priority 6): Monitors heartbeat packets and ultrasonic ranges, initiating an emergency brake if an obstacle is closer than 15 cm.</li>
+<li><code>vSafetyWatchdogTask</code> (Priority 6): Monitors heartbeat packets and E18-D80NK IR proximity sensors, initiating an emergency brake if an obstacle triggers any of the 3 IR sensors.</li>
 </ul>
 </li>
 </ul>

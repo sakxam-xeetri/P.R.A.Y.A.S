@@ -2142,10 +2142,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#face-tracking-pipeline" class="md-nav__link">
+  <a href="#vision-architecture-tasks-allocation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Face Tracking Pipeline
+        Vision Architecture &amp; Tasks Allocation
       
     </span>
   </a>
@@ -2153,10 +2153,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
+  <a href="#performance-and-limitations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Limitations
+        Performance and Limitations
       
     </span>
   </a>
@@ -4445,10 +4445,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#face-tracking-pipeline" class="md-nav__link">
+  <a href="#vision-architecture-tasks-allocation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Face Tracking Pipeline
+        Vision Architecture &amp; Tasks Allocation
       
     </span>
   </a>
@@ -4456,10 +4456,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
+  <a href="#performance-and-limitations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Limitations
+        Performance and Limitations
       
     </span>
   </a>
@@ -4485,17 +4485,37 @@
 
 <h1 id="camera-vision-face-tracking">Camera Vision &amp; Face Tracking<a class="headerlink" href="#camera-vision-face-tracking" title="Permanent link">&para;</a></h1>
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<p>This document details the vision tracking capabilities of the ESP32-CAM node, including face tracking and color tracking.</p>
-<h2 id="face-tracking-pipeline">Face Tracking Pipeline<a class="headerlink" href="#face-tracking-pipeline" title="Permanent link">&para;</a></h2>
-<p>The ESP32-CAM captures raw frames and uses a local color-thresholding or face-detection algorithm (using the ESP-WHO library) to output target offset coordinates:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> [ OV2640 Sensor ] ──&gt; [ Frame Capture ] ──&gt; [ Face Detection (ESP-WHO) ]
+<p>This document details the vision tracking and processing capabilities of PRAYAS V1, explaining the division of labor between the <strong>Seeed Studio XIAO ESP32-S3 Sense</strong> integrated camera (AI Node) and the <strong>ESP32-CAM</strong> (Camera Node).</p>
+<h2 id="vision-architecture-tasks-allocation">Vision Architecture &amp; Tasks Allocation<a class="headerlink" href="#vision-architecture-tasks-allocation" title="Permanent link">&para;</a></h2>
+<p>To maximize processing efficiency and maintain real-time performance, PRAYAS V1 isolates video streaming from AI cognitive vision tasks:</p>
+<ol>
+<li>
+<p><strong>AI Node Vision (Seeed Studio XIAO ESP32-S3 Sense)</strong>:</p>
+<ul>
+<li><strong>Primary Tasks</strong>: Object recognition, face tracking, color tracking, and visual scene Q&amp;A.</li>
+<li><strong>Implementation</strong>: Raw frames captured by the S3 on-board OV2640 camera are evaluated locally using lightweight CNNs or sent to cloud model endpoints (such as GPT-4o or Claude via the voice pipeline) for cognitive visual analysis.</li>
+<li><strong>Tracking Loop</strong>:
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> [ XIAO S3 Camera ] ──&gt; [ Frame Capture ] ──&gt; [ Local CNN Object Detection ]
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                                                       │
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                                            Is Target Detected?
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                                             ├── Yes ──&gt; [ Calculate Error Angle ] ──&gt; [ Update Neck Servo ]
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                                             └── No  ──&gt; [ Center Head ]
-</span></code></pre></div>
-<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
-<p>Due to the processing constraints of the ESP32-CAM, local face detection is limited to <strong>5–8 frames per second</strong> at a resolution of QVGA (320x240). Advanced vision tasks (such as object classification or spatial mapping) are offloaded to the Web Dashboard or a companion processor.</p>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                                            Is Target Identified?
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                                             ├── Yes ──&gt; [ Calculate Joint Target Offset ] ──&gt; [ Servo Node ]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                                             └── No  ──&gt; [ Scan/Idle Pattern ]
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Camera Node Vision (ESP32-CAM)</strong>:</p>
+<ul>
+<li><strong>Primary Tasks</strong>: Dedicated live video feed stream.</li>
+<li><strong>Implementation</strong>: Runs a WebSocket/HTTP JPEG streaming server directly streaming video frames to the Web Dashboard at 12–15 fps. It does not perform local computer vision logic to avoid latency and thermal throttling.</li>
+</ul>
+</li>
+</ol>
+<h2 id="performance-and-limitations">Performance and Limitations<a class="headerlink" href="#performance-and-limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>XIAO ESP32-S3 Sense</strong>: By separating tasks, the AI Node's processor can run local neural net tasks (e.g., face matching) at <strong>10–12 fps</strong> at QVGA resolution.</li>
+<li><strong>ESP32-CAM</strong>: The standalone module serves smooth video without dropping frames when the robot is moving.</li>
+</ul>
 
 
 

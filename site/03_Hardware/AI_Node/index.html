@@ -4532,11 +4532,19 @@
 <p>The AI Node processes voice interaction, handles conversational flows via the Xiaozhi framework, and interfaces with cloud LLM systems using the Model Context Protocol (MCP).</p>
 <h2 id="hardware-used">Hardware Used<a class="headerlink" href="#hardware-used" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>MCU</strong>: ESP32-S3-WROOM-1 (with 8MB PSRAM).</li>
+<li><strong>MCU</strong>: Seeed Studio XIAO ESP32-S3 Sense (Dual-core Xtensa 32-bit LX7, 240 MHz, 8MB PSRAM, 8MB Flash).</li>
+<li><strong>Integrated Camera</strong>: OV2640 Camera Module (plug-in board included with the XIAO Sense) used for local object detection, visual classifications, and general Q&amp;A assistant tasks.</li>
+<li><strong>Integrated Microphone</strong>: On-board digital MSM261D3526H1CPM MEMS microphone (used for voice capture, although external I2S devices can be attached).</li>
 <li><strong>DAC/Codec</strong>: ES8311 I2S Audio Codec.</li>
-<li><strong>Microphone</strong>: INMP441 I2S digital omnidirectional microphone.</li>
 <li><strong>Speaker</strong>: 3W 8-Ohm Speaker.</li>
 </ul>
+<blockquote>
+<p>[!IMPORTANT]
+<strong>Vision System Division of Labor</strong>:
+PRAYAS V1 separates vision processing into two separate hardware pathways:
+1.  <strong>AI Node Camera (XIAO ESP32-S3 Sense)</strong>: Processes raw image data locally or streams it to cloud endpoints for object recognition, face matching, visual Q&amp;A, and cognitive spatial analysis.
+2.  <strong>Camera Node (ESP32-CAM)</strong>: Dedicated entirely to serving a continuous JPEG WebSockets video stream to the Web Dashboard. This prevents cognitive AI vision queries from interrupting the real-time operator video feed.</p>
+</blockquote>
 <h2 id="gpio-mapping">GPIO Mapping<a class="headerlink" href="#gpio-mapping" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

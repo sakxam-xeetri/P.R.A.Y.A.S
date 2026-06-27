@@ -1,29 +1,9 @@
-# Sensor Node
-
-## Purpose
-The Sensor Node collects environmental and inertial data to help the robot monitor its physical state and navigate safely.
-
-## Hardware Used
-*   **MCU**: Arduino Nano 33 BLE Sense (featuring a Nordic nRF52840 Cortex-M4 CPU).
-*   **IMU**: LSM9DS1 (9-axis inertial measurement unit).
-*   **Ultrasonic Sensors**: 2 × HC-SR04 sensors (front and rear).
-
-## GPIO Mapping
-| GPIO Pin | Pin Function | Target Component |
-| :--- | :--- | :--- |
-| **I2C SCL** | I2C Clock | Internal LSM9DS1 (IMU) |
-| **I2C SDA** | I2C Data | Internal LSM9DS1 (IMU) |
-| **D2** | Echo Pin | Front HC-SR04 Sensor |
-| **D3** | Trigger Pin | Front HC-SR04 Sensor |
-| **D4** | Echo Pin | Rear HC-SR04 Sensor |
-| **D5** | Trigger Pin | Rear HC-SR04 Sensor |
-| **Tx** | UART Serial Transmit | Master Node GPIO 35 (or ESP-NOW) |
+| **I2C SDA** | I2C Data | Internal LSM9DS1 (IMU) / Sensors |
+| **Tx / D1** | UART Serial Transmit | Master Node GPIO 35 (or ESP-NOW) |
 
 ## Data Flow
 ```
- [ IMU / LSM9DS1 ] ──(I2C)──┐
-                             ├──> [ Nano 33 BLE ] ──(UART / ESP-NOW)──> [ Master Node ]
- [ HC-SR04 Sonar ] ─(Pulse)──┘
+ [ IMU / HTS221 / APDS9960 ] ──(I2C)──> [ Nano 33 BLE ] ──(UART / ESP-NOW)──> [ Master Node ]
 ```
 
 ## Failure Cases & Recovery

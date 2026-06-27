@@ -22,5 +22,5 @@ Log messages are sent over the serial interface (115200 baud) and compiled into 
 00010488 [MASTER] [I] IP address: 192.168.1.105
 00010502 [MASTER] [D] ESP-NOW Peer Registered: Servo Node (24:0A:C4:81:32:0A)
 00010950 [SERVO]  [W] Servo 3 offset out of bounds. Adjusting to limit.
-00011500 [MOTOR]  [E] Front ultrasonic sensor echo read timeout.
+00011500 [MOTOR]  [E] Center IR proximity sensor triggered obstacle halt.
 ```

@@ -2818,10 +2818,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-ai-voice-node-esp32-s3" class="md-nav__link">
+  <a href="#4-ai-voice-node-seeed-studio-xiao-esp32-s3-sense" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. AI Voice Node (ESP32-S3)
+        4. AI Voice Node (Seeed Studio XIAO ESP32-S3 Sense)
       
     </span>
   </a>
@@ -4529,10 +4529,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-ai-voice-node-esp32-s3" class="md-nav__link">
+  <a href="#4-ai-voice-node-seeed-studio-xiao-esp32-s3-sense" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. AI Voice Node (ESP32-S3)
+        4. AI Voice Node (Seeed Studio XIAO ESP32-S3 Sense)
       
     </span>
   </a>
@@ -4580,8 +4580,9 @@
 <li><strong>GPIO 25</strong>: Right Motor PWM Forward (L_PWM)</li>
 <li><strong>GPIO 26</strong>: Right Motor PWM Reverse (R_PWM)</li>
 <li><strong>GPIO 27</strong>: Right Driver Enable (L_EN / R_EN)</li>
-<li><strong>GPIO 34</strong>: Echo Pin (Front HC-SR04 Sonar)</li>
-<li><strong>GPIO 35</strong>: Trigger Pin (Front HC-SR04 Sonar)</li>
+<li><strong>GPIO 34</strong>: Left IR Proximity Sensor Input (E18-D80NK, Active LOW)</li>
+<li><strong>GPIO 35</strong>: Center IR Proximity Sensor Input (E18-D80NK, Active LOW)</li>
+<li><strong>GPIO 39</strong>: Right IR Proximity Sensor Input (E18-D80NK, Active LOW)</li>
 </ul>
 <h3 id="3-servo-controller-node-esp32">3. Servo Controller Node (ESP32)<a class="headerlink" href="#3-servo-controller-node-esp32" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4589,14 +4590,15 @@
 <li><strong>GPIO 22</strong>: I2C SCL (Connected to PCA9685 SCL)</li>
 <li><strong>GPIO 19</strong>: Hardware Output Enable (OE) (PCA9685 - active LOW)</li>
 </ul>
-<h3 id="4-ai-voice-node-esp32-s3">4. AI Voice Node (ESP32-S3)<a class="headerlink" href="#4-ai-voice-node-esp32-s3" title="Permanent link">&para;</a></h3>
+<h3 id="4-ai-voice-node-seeed-studio-xiao-esp32-s3-sense">4. AI Voice Node (Seeed Studio XIAO ESP32-S3 Sense)<a class="headerlink" href="#4-ai-voice-node-seeed-studio-xiao-esp32-s3-sense" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>GPIO 1</strong>: I2S SDOUT (ES8311 DAC)</li>
-<li><strong>GPIO 2</strong>: I2S BCLK (ES8311 &amp; INMP441)</li>
-<li><strong>GPIO 3</strong>: I2S WS / LRCK (ES8311 &amp; INMP441)</li>
-<li><strong>GPIO 4</strong>: I2S SDIN (INMP441 Mic)</li>
-<li><strong>GPIO 18</strong>: UART Tx (Connected to Master GPIO 16)</li>
-<li><strong>GPIO 19</strong>: UART Rx (Connected to Master GPIO 17)</li>
+<li><strong>GPIO 41 &amp; 42</strong>: Dedicated internal I2S pins for on-board MEMS Microphone (MSM261D3526H1CPM)</li>
+<li><strong>On-board Camera Bus</strong>: Connected to integrated camera module slot via internal GPIOs</li>
+<li><strong>GPIO 2 (Pin D8)</strong>: I2S Serial Data Out (To ES8311 DAC SDIN)</li>
+<li><strong>GPIO 8 (Pin D7)</strong>: I2S Serial Clock (To ES8311 BCLK)</li>
+<li><strong>GPIO 9 (Pin D9)</strong>: I2S Word Select / LRCK (To ES8311 WS)</li>
+<li><strong>GPIO 43 (Pin D1)</strong>: UART Tx (Connected to Master Node GPIO 16)</li>
+<li><strong>GPIO 44 (Pin D2)</strong>: UART Rx (Connected to Master Node GPIO 17)</li>
 </ul>
 
 

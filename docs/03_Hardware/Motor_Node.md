@@ -7,6 +7,9 @@ The Motor Controller Node drives the 4 Johnson 12V geared motors using two BTS79
 *   **MCU**: ESP32-WROOM-32E.
 *   **Drivers**: 2 × BTS7960 43A High-Current H-Bridge Motor Drivers.
 *   **Motors**: 4 × Johnson 12V 200RPM Geared DC Motors.
+*   **Wheels**: 4 × Robot Wheels (10cm Diameter, 4cm Width, rubber-tread).
+*   **Brackets**: Heavy-duty steel motor mounting brackets.
+*   **Obstacle Sensors**: 3 × E18-D80NK Adjustable Infrared Proximity Sensors (Left, Center, Right) mounted on the base chassis for collision avoidance.
 
 ## GPIO Mapping
 | GPIO | Direction | Pin Function | Target Component |
@@ -17,8 +20,9 @@ The Motor Controller Node drives the 4 Johnson 12V geared motors using two BTS79
 | **GPIO 25** | Output | Right PWM Forward (L_PWM) | Driver 2 (Right Group) |
 | **GPIO 26** | Output | Right PWM Reverse (R_PWM) | Driver 2 (Right Group) |
 | **GPIO 27** | Output | Right Enable (L_EN / R_EN) | Driver 2 (Right Group) |
-| **GPIO 34** | Input | Front Ultrasonic Echo | HC-SR04 Sensor |
-| **GPIO 35** | Output | Front Ultrasonic Trigger| HC-SR04 Sensor |
+| **GPIO 34** | Input | Left Proximity Sensor (Active LOW) | Left E18-D80NK IR Sensor |
+| **GPIO 35** | Input | Center Proximity Sensor (Active LOW) | Center E18-D80NK IR Sensor |
+| **GPIO 39** | Input | Right Proximity Sensor (Active LOW) | Right E18-D80NK IR Sensor |
 
 ## State Machine
 
@@ -27,7 +31,7 @@ stateDiagram-v2
     [*] --> STANDBY
     STANDBY --> DRIVING : Received Command (Speed > 0)
     DRIVING --> STANDBY : Received Command (Speed == 0)
-    DRIVING --> BRAKING : Obstacle Detected (< 15cm)
+    DRIVING --> BRAKING : Obstacle Detected (IR Pin LOW)
     DRIVING --> BRAKING : Heartbeat Timeout (> 500ms)
     BRAKING --> STANDBY : Speed Zeroed & Safe
 ```

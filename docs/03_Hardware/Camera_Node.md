@@ -4,7 +4,10 @@
 The Camera Node captures video and serves a JPEG/WebSocket stream to the Web Dashboard. It can also perform basic computer vision tasks.
 
 ## Hardware Used
-*   **MCU**: ESP32-CAM.
+*   **MCU**: ESP32-CAM (AI-Thinker module board) — [AI-Thinker ESP32-CAM Pinout Reference](https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/).
+    
+    ![ESP32-CAM Pinout Diagram](../assets/img/esp32cam.png)
+
 *   **Sensor**: OV2640 2-Megapixel CMOS camera module.
 *   **Flash**: Built-in bright white LED (connected to GPIO 4).
 

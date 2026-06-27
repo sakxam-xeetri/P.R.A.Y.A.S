@@ -25,11 +25,12 @@ This document provides JSON schemas for the MQTT messages used to communicate wi
     "sensors": {
       "type": "object",
       "properties": {
-        "ultrasonic_front": { "type": "number" },
-        "ultrasonic_rear": { "type": "number" },
+        "proximity_left": { "type": "boolean" },
+        "proximity_center": { "type": "boolean" },
+        "proximity_right": { "type": "boolean" },
         "temperature": { "type": "number" }
       },
-      "required": ["ultrasonic_front", "ultrasonic_rear"]
+      "required": ["proximity_left", "proximity_center", "proximity_right"]
     },
     "system_state": { "type": "string" }
   },

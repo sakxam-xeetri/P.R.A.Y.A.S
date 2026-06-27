@@ -4,19 +4,19 @@
 This document details the autonomous locomotion, path planning, and obstacle avoidance systems of PRAYAS V1.
 
 ## Obstacle Avoidance Flowchart
-Locomotion tasks default to a safety-monitored behavior:
+Locomotion tasks default to a safety-monitored behavior using the three base-mounted E18-D80NK adjustable infrared proximity sensors (Left, Center, Right):
 
 ```mermaid
 flowchart TD
-    Start([Start Pathing]) --> ReadSensors[Read Ultrasonic Sonars]
-    ReadSensors --> CheckDist{Is Obstacle < 20cm?}
+    Start([Start Pathing]) --> ReadSensors[Read 3x E18-D80NK IR Sensors]
+    ReadSensors --> CheckIR{Is Left, Center, or Right LOW?}
     
-    CheckDist -- Yes --> StopBase[Halt Motors]
+    CheckIR -- Yes --> StopBase[Halt Motors]
     StopBase --> BackUp[Reverse 10cm]
-    BackUp --> SpinBase[Rotate 45 degrees left]
+    BackUp --> SpinBase[Rotate 45 degrees away from trigger]
     SpinBase --> ReadSensors
     
-    CheckDist -- No --> DriveForward[Drive toward target coordinates]
+    CheckIR -- No --> DriveForward[Drive toward target coordinates]
     DriveForward --> ReadSensors
 ```
 

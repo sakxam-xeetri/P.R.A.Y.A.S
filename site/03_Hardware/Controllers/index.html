@@ -4512,8 +4512,8 @@
 <p>The platform distributes processing across multiple microcontrollers to handle specific real-time tasks:</p>
 <ul>
 <li><strong>ESP32-WROOM-32E (Master, Motor, Servo, Power Nodes)</strong>: Chosen for its dual-core Xtensa 32-bit LX6 processor (240 MHz, 520 KB SRAM, 4MB Flash), built-in Wi-Fi and Bluetooth, and ESP-NOW support.</li>
-<li><strong>ESP32-S3-WROOM-1 (AI Node)</strong>: Integrates vector instructions for accelerating neural network calculations (voice wake word, simple wake gesture processing), along with 8MB Octal SPI PSRAM.</li>
-<li><strong>ESP32-CAM (Camera Node)</strong>: OV2640 camera interface with built-in micro-SD slot, providing a cost-effective, low-power video server.</li>
+<li><strong>Seeed Studio XIAO ESP32-S3 Sense (AI Node)</strong>: Compact development board based on ESP32-S3 (dual-core Xtensa 32-bit LX7 processor, 240 MHz, 8MB PSRAM, 8MB Flash). Includes an integrated camera module (OV2640) and digital microphone. The on-board camera is allocated for AI tasks (object detection, visual scene analysis, and Q&amp;A assistance), whereas the standalone ESP32-CAM is used strictly for the Web Dashboard live video feed.</li>
+<li><strong>ESP32-CAM (Camera Node)</strong>: Dedicated OV2640 camera interface board, used strictly as a low-power, high-frame-rate video streaming server for dashboard live feeds.</li>
 <li><strong>Arduino Nano 33 BLE Sense (Sensor Node)</strong>: Features a 64 MHz ARM Cortex-M4 (nRF52840) with low power consumption and onboard sensors (IMU, microphone, gesture/light/color sensors).</li>
 </ul>
 <h2 id="comparative-specifications-table">Comparative Specifications Table<a class="headerlink" href="#comparative-specifications-table" title="Permanent link">&para;</a></h2>
@@ -4522,7 +4522,7 @@
 <tr>
 <th style="text-align: left;">Parameter</th>
 <th style="text-align: left;">ESP32-WROOM-32E</th>
-<th style="text-align: left;">ESP32-S3-WROOM-1</th>
+<th style="text-align: left;">XIAO ESP32-S3 Sense</th>
 <th style="text-align: left;">ESP32-CAM</th>
 <th style="text-align: left;">Nano 33 BLE Sense</th>
 </tr>
@@ -4573,8 +4573,8 @@
 <tr>
 <td style="text-align: left;"><strong>Primary Task</strong></td>
 <td style="text-align: left;">Real-time Motor/Servos</td>
-<td style="text-align: left;">AI &amp; Speech Engine</td>
-<td style="text-align: left;">Video Stream</td>
+<td style="text-align: left;">AI, Speech &amp; Vision AI</td>
+<td style="text-align: left;">Dedicated Video Stream</td>
 <td style="text-align: left;">IMU &amp; Environment</td>
 </tr>
 </tbody>

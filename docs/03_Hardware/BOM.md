@@ -9,11 +9,12 @@ This document lists the components, quantities, approximate costs, and sourcing 
 | Item Description | Sourcing Model | Qty | Unit Price (USD) | Total Price (USD) |
 | :--- | :--- | :---: | :---: | :---: |
 | ESP32 Development Board | ESP32-WROOM-32E (30-pin) | 4 | $4.50 | $18.00 |
-| AI Voice Controller Board | ESP32-S3-WROOM-1 (8MB PSRAM) | 1 | $9.00 | $9.00 |
+| AI Voice Controller Board | Seeed Studio XIAO ESP32-S3 Sense | 1 | $16.00 | $16.00 |
 | Camera Module | ESP32-CAM (with OV2640) | 1 | $6.50 | $6.50 |
 | Sensor Hub | Arduino Nano 33 BLE Sense | 1 | $35.00 | $35.00 |
 | PWM Servo Driver | PCA9685 16-Channel I2C Module | 1 | $4.00 | $4.00 |
 | Audio Codec Module | ES8311 breakout board | 1 | $3.50 | $3.50 |
+| Proximity Sensors | E18-D80NK Adjustable IR Sensor | 3 | $4.50 | $13.50 |
 
 ### 2. Drivetrain & Actuators
 | Item Description | Sourcing Model | Qty | Unit Price (USD) | Total Price (USD) |
@@ -21,7 +22,8 @@ This document lists the components, quantities, approximate costs, and sourcing 
 | Geared DC Motors | Johnson 12V 200RPM Metal Gear | 4 | $15.00 | $60.00 |
 | Motor Driver Modules | BTS7960 43A H-Bridge | 2 | $8.50 | $17.00 |
 | Standard Metal Gear Servos| TowerPro MG995 Analog Servo | 7 | $6.00 | $42.00 |
-| Drive Wheels | 100mm Rubber robot wheel | 4 | $4.00 | $16.00 |
+| Drive Wheels | Robot Wheel (10cm Dia, 4cm Width) | 4 | $6.00 | $24.00 |
+| Wheel Hub Brackets | Customized 100mm Wheel Flange Hubs | 4 | $2.50 | $10.00 |
 
 ### 3. Power System
 | Item Description | Sourcing Model | Qty | Unit Price (USD) | Total Price (USD) |
@@ -41,5 +43,5 @@ This document lists the components, quantities, approximate costs, and sourcing 
 | Fasteners & Brackets | M3, M4, M5 screws & L-brackets | 1 | $15.00 | $15.00 |
 
 ### Summary Cost
-*   **Total Component Count**: 36 items.
-*   **Estimated Total Cost**: **$339.00 USD** (excluding shipping and taxes).
+*   **Total Component Count**: 43 items.
+*   **Estimated Total Cost**: **$377.50 USD** (excluding shipping and taxes).
