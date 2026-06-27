@@ -4532,8 +4532,13 @@
 <p>The Master Coordinator Node serves as the brain of PRAYAS V1. It connects to external systems (MQTT broker, dashboard) over Wi-Fi and coordinates the sub-nodes (Motor, Servo, Sensor) using ESP-NOW.</p>
 <h2 id="hardware-used">Hardware Used<a class="headerlink" href="#hardware-used" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>MCU</strong>: ESP32-WROOM-32E.</li>
-<li><strong>Antenna</strong>: Built-in PCB trace antenna (an external u.FL antenna version is recommended if inside a metal shield).</li>
+<li>
+<p><strong>MCU</strong>: ESP32-WROOM-32E (mounted on ESP32-DevKitC-v4 core board) — <a href="https://docs.espressif.com/projects/esp-idf/en/v5.1/esp32/hw-reference/esp32/get-started-devkitc.html">Official Espressif Hardware Reference</a>.</p>
+<p><img src="../assets/img/esp32-devkitC-v4-pinout.png" alt="ESP32 DevKitC v4 Pinout Diagram" width="500"></p>
+</li>
+<li>
+<p><strong>Antenna</strong>: Built-in PCB trace antenna (an external u.FL antenna version is recommended if inside a metal shield).</p>
+</li>
 </ul>
 <h2 id="gpio-mapping">GPIO Mapping<a class="headerlink" href="#gpio-mapping" title="Permanent link">&para;</a></h2>
 <ul>

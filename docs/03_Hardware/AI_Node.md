@@ -6,7 +6,7 @@ The AI Node processes voice interaction, handles conversational flows via the Xi
 ## Hardware Used
 *   **MCU**: Seeed Studio XIAO ESP32-S3 Sense (Dual-core Xtensa 32-bit LX7, 240 MHz, 8MB PSRAM, 8MB Flash) — [Official Seeed Studio Product Details](https://www.seeedstudio.com/XIAO-ESP32S3-Sense-p-5639.html).
     
-    ![Seeed Studio XIAO ESP32-S3 Sense](../assets/img/xhaioesp32s3sense.jpg)
+    <img src="../assets/img/xhaioesp32s3sense.jpg" alt="Seeed Studio XIAO ESP32-S3 Sense" width="300">
 
 *   **Integrated Camera**: OV2640 Camera Module (plug-in board included with the XIAO Sense) used for local object detection, visual classifications, and general Q&A assistant tasks.
 *   **Integrated Microphone**: On-board digital MSM261D3526H1CPM MEMS microphone (used for voice capture, although external I2S devices can be attached).
