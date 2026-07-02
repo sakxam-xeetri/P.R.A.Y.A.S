@@ -37,21 +37,28 @@ The table below lists all components required to assemble the Motor Node:
 
 ### ESP32 Dev Board
 *   **What it is**: A small, low-cost microcontroller development board with a dual-core processor and digital input/output (GPIO) pins.
+    
+    ![ESP32 DevKitC v4 Pinout Diagram](../assets/img/esp32-devkitC-v4-pinout.png){ style="display: block; margin: 0 auto;" width="500" }
 *   **Why it is used**: It provides fast processing speeds, hardware timers capable of generating precise Pulse Width Modulation (PWM) signals, and has enough GPIO pins to handle the sensors and drivers.
 *   **How it works inside PRAYAS**: It acts as the local brain of the Motor Node. It reads the digital states of the IR sensors and outputs the control signals (speed and direction) to the motor drivers.
 
 ### BTS7960 Motor Driver
 *   **What it is**: A high-current H-bridge motor driver module designed to control a DC motor's direction and speed.
+    
+    ![BTS7960 H-Bridge Driver](../assets/img/BTS7960.jpg){ style="display: block; margin: 0 auto;" width="350" }
 *   **Why it is used**: Johnson DC motors can draw several amperes under load. Standard motor drivers (like L298N) will overheat and fail. The BTS7960 is rated for up to 43A, providing a reliable and safe solution.
 *   **How it works inside PRAYAS**: It acts as an electronic switch. It receives weak logic signals from the ESP32 and switches the high-current 12V power from the battery to the motors.
 
 ### Johnson 12V 200 RPM DC Motors
 *   **What it is**: A brushed DC motor attached to a metal spur gearbox.
+    
+    ![Johnson 12V DC Motor](../assets/img/jhonson motor.jpeg){ style="display: block; margin: 0 auto;" width="300" }
 *   **Why it is used**: DC motors rotate too fast and have too little torque on their own to move a heavy robot. The gearbox reduces the rotation speed to 200 RPM while multiplying the torque, allowing it to easily carry the 5–7 kg weight of PRAYAS.
 *   **How it works inside PRAYAS**: Four motors drive the wheels. They are wired in parallel groups (two on the left, two on the right) to run a 4-wheel-drive differential chassis.
 
 ### E18-D80NK IR Obstacle Sensors
 *   **What it is**: An infrared proximity sensor that emits a beam of light and detects its reflection from nearby objects.
+    *   *Reference*: [E18-D80NK Datasheet Reference](https://handsontec.com/dataspecs/sensor/E18-D80NK%20IR%20Sensor.pdf)
 *   **Why it is used**: It provides cheap, reliable, and low-latency digital obstacle detection.
 *   **How it works inside PRAYAS**: Three sensors are mounted on the front bumper. If an obstacle comes within the detection threshold, the sensor pulls its output pin LOW, telling the ESP32 to immediately brake the motors.
 
