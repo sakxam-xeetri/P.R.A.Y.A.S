@@ -17,3 +17,9 @@ https://cdn-learn.adafruit.com/downloads/pdf/16-channel-pwm-servo-driver.pdf
 https://www.analog.com/media/en/technical-documentation/data-sheets/max98357a-max98357b.pdf
 
 https://assets.rs-online.com/v1699554953/Datasheets/39649469e922b1bb1701adf117c2afc4.pdf
+
+https://www.handsontec.com/dataspecs/ACS712-Current%20Sensor.pdf
+
+https://circuitdigest.com/electronic-circuits/3s-6a-lithium-ion-battery-management-protection-bms-module
+
+https://handsontec.com/dataspecs/sensor/E18-D80NK%20IR%20Sensor.pdf

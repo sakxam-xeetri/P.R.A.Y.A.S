@@ -1,4 +1,4 @@
-# Inter-Node & External Communication Architecture
+# Inter-Node & Extfernal Communication Architecture
 
 ## Purpose
 This document details the communication structure of PRAYAS V1, explaining how the nodes communicate locally via ESP-NOW and externally via MQTT and WebSockets.
@@ -15,7 +15,7 @@ This document details the communication structure of PRAYAS V1, explaining how t
                                          [ Motor Node ]        [ Servo Node ]       [ Sensor Node ]
 ```
 
----
+---lll
 
 ## 1. Local Communication (ESP-NOW)
 *   **Protocol**: Connectionless, peer-to-peer 802.11 physical layer wireless packets.
