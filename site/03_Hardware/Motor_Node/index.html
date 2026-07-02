@@ -5231,12 +5231,13 @@
 </ul>
 <h3 id="e18-d80nk-ir-obstacle-sensors">E18-D80NK IR Obstacle Sensors<a class="headerlink" href="#e18-d80nk-ir-obstacle-sensors" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>What it is</strong>: An infrared proximity sensor that emits a beam of light and detects its reflection from nearby objects.<ul>
-<li><em>Reference</em>: <a href="https://handsontec.com/dataspecs/sensor/E18-D80NK%20IR%20Sensor.pdf">E18-D80NK Datasheet Reference</a></li>
-</ul>
+<li>
+<p><strong>What it is</strong>: An infrared proximity sensor that emits a beam of light and detects its reflection from nearby objects.</p>
+<p><img alt="E18-D80NK IR Sensor" src="../../assets/img/ed18_sensor.jpg" style="display: block; margin: 0 auto;" width="250" />
+*   <em>Reference</em>: <a href="https://handsontec.com/dataspecs/sensor/E18-D80NK%20IR%20Sensor.pdf">E18-D80NK Datasheet Reference</a>
+*   <strong>Why it is used</strong>: It provides cheap, reliable, and low-latency digital obstacle detection.
+*   <strong>How it works inside PRAYAS</strong>: Three sensors are mounted on the front bumper. If an obstacle comes within the detection threshold, the sensor pulls its output pin LOW, telling the ESP32 to immediately brake the motors.</p>
 </li>
-<li><strong>Why it is used</strong>: It provides cheap, reliable, and low-latency digital obstacle detection.</li>
-<li><strong>How it works inside PRAYAS</strong>: Three sensors are mounted on the front bumper. If an obstacle comes within the detection threshold, the sensor pulls its output pin LOW, telling the ESP32 to immediately brake the motors.</li>
 </ul>
 <hr />
 <h2 id="4-circuit-connection">4. Circuit Connection<a class="headerlink" href="#4-circuit-connection" title="Permanent link">&para;</a></h2>

@@ -58,6 +58,8 @@ The table below lists all components required to assemble the Motor Node:
 
 ### E18-D80NK IR Obstacle Sensors
 *   **What it is**: An infrared proximity sensor that emits a beam of light and detects its reflection from nearby objects.
+    
+    ![E18-D80NK IR Sensor](../assets/img/ed18_sensor.jpg){ style="display: block; margin: 0 auto;" width="250" }
     *   *Reference*: [E18-D80NK Datasheet Reference](https://handsontec.com/dataspecs/sensor/E18-D80NK%20IR%20Sensor.pdf)
 *   **Why it is used**: It provides cheap, reliable, and low-latency digital obstacle detection.
 *   **How it works inside PRAYAS**: Three sensors are mounted on the front bumper. If an obstacle comes within the detection threshold, the sensor pulls its output pin LOW, telling the ESP32 to immediately brake the motors.
